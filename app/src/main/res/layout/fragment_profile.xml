@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:fontFamily="@font/montserrat_semi_bold"
-        android:text="Manchester United"
+        android:text="Full name"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -111,14 +111,27 @@
         android:id="@+id/tvUpdateProfile"
         android:layout_width="match_parent"
         android:layout_height="52dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/custom_background_update_profile"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:text="@string/update"
-        android:gravity="center"
-        android:textColor="@color/white"
         android:fontFamily="@font/montserrat_semi_bold"
-        android:textSize="18sp"/>
+        android:gravity="center"
+        android:text="@string/update"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@id/tvLogoutProfile" />
+
+    <TextView
+        android:id="@+id/tvLogoutProfile"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/custom_background_logout_profile"
+        android:fontFamily="@font/montserrat_semi_bold"
+        android:gravity="center"
+        android:text="@string/logout"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
