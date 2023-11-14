@@ -9,6 +9,7 @@ import com.mtg.speedtest.speedcheck.internet.booking.account_screen.LoginAct
 class SplashAct : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        LanguageHelper.updateLanguage(this)
         setContentView(R.layout.act_splash)
         initView()
     }
