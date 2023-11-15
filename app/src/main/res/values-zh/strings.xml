@@ -35,4 +35,11 @@
     <string name="share">分享</string>
     <string name="privacy_policy">隐私政策</string>
     <string name="feedback">反馈</string>
+    <string name="enter_your_first_name">输入您的名字</string>
+    <string name="enter_your_last_name">输入您的姓氏</string>
+    <string name="need_to_fill">需要填写全部信息</string>
+    <string name="confirm_password">确认密码不正确</string>
+    <string name="account_error">电子邮件或密码不正确</string>
+    <string name="update_success">更新成功</string>
+    <string name="update_failed">更新失败</string>
 </resources>

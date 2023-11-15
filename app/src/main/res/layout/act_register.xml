@@ -9,7 +9,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="90dp"
+        android:layout_marginTop="55dp"
         android:fontFamily="@font/montserrat_bold"
         android:gravity="center"
         android:text="@string/welcome_to_onboard"
@@ -17,13 +17,25 @@
         android:textSize="18sp" />
 
     <EditText
-        android:id="@+id/edtFullNameRegister"
+        android:id="@+id/edtFirstNameRegister"
         android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:layout_marginTop="50dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/custom_background_name_profile"
         android:fontFamily="@font/montserrat_medium"
-        android:hint="@string/enter_your_full_name"
+        android:hint="@string/enter_your_first_name"
+        android:paddingStart="20dp"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/edtLastNameRegister"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/custom_background_name_profile"
+        android:fontFamily="@font/montserrat_medium"
+        android:hint="@string/enter_your_last_name"
         android:paddingStart="20dp"
         android:textColor="@color/black"
         android:textSize="16sp" />
@@ -31,7 +43,7 @@
     <EditText
         android:id="@+id/edtEmailRegister"
         android:layout_width="match_parent"
-        android:layout_height="65dp"
+        android:layout_height="55dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/custom_background_name_profile"
         android:fontFamily="@font/montserrat_medium"
@@ -43,7 +55,7 @@
     <EditText
         android:id="@+id/edtPasswordRegister"
         android:layout_width="match_parent"
-        android:layout_height="65dp"
+        android:layout_height="55dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/custom_background_name_profile"
         android:fontFamily="@font/montserrat_medium"
@@ -56,7 +68,7 @@
     <EditText
         android:id="@+id/edtConfirmPasswordRegister"
         android:layout_width="match_parent"
-        android:layout_height="65dp"
+        android:layout_height="55dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/custom_background_name_profile"
         android:fontFamily="@font/montserrat_medium"

@@ -35,4 +35,11 @@
     <string name="share">Share</string>
     <string name="privacy_policy">Privacy policy</string>
     <string name="feedback">Feedback</string>
+    <string name="enter_your_first_name">Enter your first name</string>
+    <string name="enter_your_last_name">Enter your last name</string>
+    <string name="need_to_fill">Need to fill in all information</string>
+    <string name="confirm_password">Confirm the password is incorrect</string>
+    <string name="account_error">Email or password is incorrect</string>
+    <string name="update_success">Update Success</string>
+    <string name="update_failed">Update Failed</string>
 </resources>
