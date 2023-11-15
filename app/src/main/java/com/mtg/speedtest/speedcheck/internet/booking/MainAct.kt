@@ -27,7 +27,7 @@ class MainAct : AppCompatActivity() {
                     setCurrentFragment(FavoriteFragment())
                     return@OnNavigationItemSelectedListener true
                 }
-                R.id.bottomBarChat -> {
+                R.id.bottomBarBookmark -> {
                     setCurrentFragment(ChatFragment())
                     return@OnNavigationItemSelectedListener true
                 }

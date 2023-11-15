@@ -9,9 +9,9 @@
         android:title="@string/favorite"
         android:icon="@drawable/selector_favorite_main"/>
     <item
-        android:id="@+id/bottomBarChat"
-        android:title="@string/chat"
-        android:icon="@drawable/selector_chat_main"/>
+        android:id="@+id/bottomBarBookmark"
+        android:title="@string/bookmark"
+        android:icon="@drawable/selector_bookmark_main"/>
 
     <item
         android:id="@+id/bottomBarProfile"

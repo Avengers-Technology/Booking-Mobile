@@ -25,6 +25,17 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initViews()
+        initEvents()
+    }
+
+    private fun initEvents() {
+        binding.tvLogoutProfile.setOnClickListener {
+            requireActivity().finish()
+        }
+
+        binding.tvUpdateProfile.setOnClickListener {
+
+        }
     }
 
     private fun initViews() {
