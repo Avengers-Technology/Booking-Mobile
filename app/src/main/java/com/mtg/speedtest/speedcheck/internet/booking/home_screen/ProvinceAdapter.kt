@@ -23,7 +23,9 @@ class ProvinceAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         with(holder) {
             with(listProvince[position]) {
-
+                binding.imvProvince.setImageResource(this.imageProvince)
+                binding.tvAddressProvince.text = this.addressProvince
+                binding.tvDescriptionProvince.text = this.descriptionProvince
             }
         }
     }

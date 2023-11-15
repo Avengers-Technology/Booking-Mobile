@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.mtg.speedtest.speedcheck.internet.booking.R
 import com.mtg.speedtest.speedcheck.internet.booking.databinding.FragmentHomeBinding
 import com.mtg.speedtest.speedcheck.internet.booking.model.HotTrend
 import com.mtg.speedtest.speedcheck.internet.booking.model.Province
@@ -38,11 +39,13 @@ class HomeFragment : Fragment() {
 
     private fun initData() {
         listProvinceFake = mutableListOf()
-        listProvinceFake.add(Province(0, "", ""))
-        listProvinceFake.add(Province(0, "", ""))
-        listProvinceFake.add(Province(0, "", ""))
-        listProvinceFake.add(Province(0, "", ""))
-        listProvinceFake.add(Province(0, "", ""))
+        listProvinceFake.add(Province(1, R.drawable.ic_hanoi, "Ha Noi", "The country's capital has many historical monuments"))
+        listProvinceFake.add(Province(2, R.drawable.ic_thaibinh, "Thai Binh", "The country's capital has many historical monuments"))
+        listProvinceFake.add(Province(3,R.drawable.ic_quangninh, "Quang Ninh", "The country's capital has many historical monuments"))
+        listProvinceFake.add(Province(4, R.drawable.ic_haiphong, "Hai Phong", "The country's capital has many historical monuments"))
+        listProvinceFake.add(Province(5, R.drawable.ic_nghean, "Nghe An", "The country's capital has many historical monuments"))
+        listProvinceFake.add(Province(6, R.drawable.ic_quangbinh, "Quang Binh", "The country's capital has many historical monuments"))
+        listProvinceFake.add(Province(7, R.drawable.ic_hochiminh, "Ho Chi Minh", "The country's capital has many historical monuments"))
 
         listHotTrendFake = mutableListOf()
         listHotTrendFake.add(HotTrend(0, "", "", ""))
