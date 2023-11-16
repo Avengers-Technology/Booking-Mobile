@@ -26,6 +26,9 @@ class ProvinceAdapter(
                 binding.imvProvince.setImageResource(this.imageProvince)
                 binding.tvAddressProvince.text = this.addressProvince
                 binding.tvDescriptionProvince.text = this.descriptionProvince
+                binding.constraintItemProvince.setOnClickListener {
+                    clickListener(listProvince[position], position)
+                }
             }
         }
     }

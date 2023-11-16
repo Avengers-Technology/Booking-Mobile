@@ -1,5 +1,6 @@
 package com.mtg.speedtest.speedcheck.internet.booking.home_screen
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.mtg.speedtest.speedcheck.internet.booking.R
 import com.mtg.speedtest.speedcheck.internet.booking.SingletonClass
 import com.mtg.speedtest.speedcheck.internet.booking.databinding.FragmentHomeBinding
+import com.mtg.speedtest.speedcheck.internet.booking.detail_province.DetailProvinceAct
 import com.mtg.speedtest.speedcheck.internet.booking.model.HotTrend
 import com.mtg.speedtest.speedcheck.internet.booking.model.Province
 
@@ -36,8 +38,10 @@ class HomeFragment : Fragment() {
     }
 
     private fun initViews() {
-        provinceAdapter = ProvinceAdapter(SingletonClass.getInstance().listProvince) { _, _ ->
-
+        provinceAdapter = ProvinceAdapter(SingletonClass.getInstance().listProvince) { province, _ ->
+            val intent = Intent(requireContext(), DetailProvinceAct::class.java)
+            intent.putExtra("key_detail_province", province)
+            startActivity(intent)
         }
         val layoutManagerProvince: RecyclerView.LayoutManager =
             LinearLayoutManager(this.activity, LinearLayoutManager.HORIZONTAL, false)
