@@ -9,32 +9,50 @@ class SingletonClass private constructor() {
     var listHotTrend = mutableListOf(
         HotTrend(
             0, R.drawable.ic_yentu, "Yen Tu Pagoda", "Quang Ninh, Viet Nam", "$100", 3,
+            isFavorite = true,
+            isBookMark = false,
+            description = ""
+        ),
+        HotTrend(
+            1, R.drawable.ic_vinhhalong, "Ha Long Bay", "Quang Ninh, Viet Nam", "$100", 3,
+            isFavorite = true,
+            isBookMark = false,
+            description = ""
+        ),
+        HotTrend(
+            2, R.drawable.ic_baotangq_quangninh, "Quang Ninh Museum", "Quang Ninh, Viet Nam", "$100", 3,
+            isFavorite = true,
+            isBookMark = false,
+            description = ""
+        ),
+        HotTrend(
+            3, R.drawable.ic_hotay, "Ho Tay Lake", "Ha Noi, Viet Nam", "200$", 1,
             isFavorite = false,
             isBookMark = false,
             description = ""
         ),
         HotTrend(
-            1, R.drawable.ic_hotay, "Ho Tay Lake", "Ha Noi, Viet Nam", "200$", 1,
+            4, R.drawable.ic_hoguom, "Ho Guom Lake", "Ha Noi, Viet Nam", "200$", 1,
             isFavorite = false,
             isBookMark = false,
             description = ""
         ),
         HotTrend(
-            2, R.drawable.ic_hoguom, "Ho Guom Lake", "Ha Noi, Viet Nam", "200$", 1,
+            5, R.drawable.ic_cauthehuc, "The Huc Bridge", "Ha Noi, Viet Nam", "200$", 1,
             isFavorite = false,
             isBookMark = false,
             description = ""
         ),
         HotTrend(
-            3, R.drawable.ic_catba, "Cat Ba Beach", "Hai Phong, Viet Nam", "300$", 4,
+            6, R.drawable.ic_catba, "Cat Ba Beach", "Hai Phong, Viet Nam", "300$", 4,
             isFavorite = false,
-            isBookMark = false,
+            isBookMark = true,
             description = ""
         ),
         HotTrend(
-            4, R.drawable.ic_chuakeo, "Chua Keo Pagoda", "Thai Binh, Viet Nam", "600$", 2,
+            7, R.drawable.ic_chuakeo, "Chua Keo Pagoda", "Thai Binh, Viet Nam", "600$", 2,
             isFavorite = false,
-            isBookMark = false,
+            isBookMark = true,
             description = ""
         )
     )

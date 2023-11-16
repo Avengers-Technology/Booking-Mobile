@@ -21,7 +21,6 @@ class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
     private lateinit var provinceAdapter: ProvinceAdapter
     private lateinit var hotTrendAdapter: HotTrendAdapter
-    private lateinit var listHotTrendFake: MutableList<HotTrend>
 
 
     override fun onCreateView(
@@ -33,54 +32,7 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initData()
         initViews()
-    }
-
-    private fun initData() {
-
-        listHotTrendFake = mutableListOf()
-        listHotTrendFake.add(
-            HotTrend(
-                0, R.drawable.ic_yentu, "Yen Tu Pagoda", "Quang Ninh, Viet Nam", "$100", 3,
-                isFavorite = false,
-                isBookMark = false,
-                description = ""
-            )
-        )
-        listHotTrendFake.add(
-            HotTrend(
-                1, R.drawable.ic_hotay, "Ho Tay Lake", "Ha Noi, Viet Nam", "200$", 1,
-                isFavorite = false,
-                isBookMark = false,
-                description = ""
-            )
-        )
-        listHotTrendFake.add(
-            HotTrend(
-                2, R.drawable.ic_hoguom, "Ho Guom Lake", "Ha Noi, Viet Nam", "200$", 1,
-                isFavorite = false,
-                isBookMark = false,
-                description = ""
-            )
-        )
-        listHotTrendFake.add(
-            HotTrend(
-                3, R.drawable.ic_catba, "Cat Ba Beach", "Hai Phong, Viet Nam", "300$", 4,
-                isFavorite = false,
-                isBookMark = false,
-                description = ""
-            )
-        )
-        listHotTrendFake.add(
-            HotTrend(
-                4, R.drawable.ic_chuakeo, "Chua Keo Pagoda", "Thai Binh, Viet Nam", "600$", 2,
-                isFavorite = false,
-                isBookMark = false,
-                description = ""
-            )
-        )
-
     }
 
     private fun initViews() {
@@ -93,7 +45,7 @@ class HomeFragment : Fragment() {
         binding.revProvinceHome.adapter = provinceAdapter
 
 
-        hotTrendAdapter = HotTrendAdapter(listHotTrendFake) { _, _ ->
+        hotTrendAdapter = HotTrendAdapter(SingletonClass.getInstance().listHotTrend) { _, _ ->
 
         }
         val layoutManagerHotTrend: RecyclerView.LayoutManager = LinearLayoutManager(this.activity, LinearLayoutManager.VERTICAL, false)
