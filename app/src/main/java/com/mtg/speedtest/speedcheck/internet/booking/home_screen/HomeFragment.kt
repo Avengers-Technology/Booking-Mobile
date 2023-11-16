@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.mtg.speedtest.speedcheck.internet.booking.R
+import com.mtg.speedtest.speedcheck.internet.booking.SingletonClass
 import com.mtg.speedtest.speedcheck.internet.booking.databinding.FragmentHomeBinding
 import com.mtg.speedtest.speedcheck.internet.booking.model.HotTrend
 import com.mtg.speedtest.speedcheck.internet.booking.model.Province
@@ -20,7 +21,6 @@ class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
     private lateinit var provinceAdapter: ProvinceAdapter
     private lateinit var hotTrendAdapter: HotTrendAdapter
-    private lateinit var listProvinceFake: MutableList<Province>
     private lateinit var listHotTrendFake: MutableList<HotTrend>
 
 
@@ -38,26 +38,53 @@ class HomeFragment : Fragment() {
     }
 
     private fun initData() {
-        listProvinceFake = mutableListOf()
-        listProvinceFake.add(Province(1, R.drawable.ic_hanoi, "Ha Noi", "The country's capital has many historical monuments"))
-        listProvinceFake.add(Province(2, R.drawable.ic_thaibinh, "Thai Binh", "The country's capital has many historical monuments"))
-        listProvinceFake.add(Province(3,R.drawable.ic_quangninh, "Quang Ninh", "The country's capital has many historical monuments"))
-        listProvinceFake.add(Province(4, R.drawable.ic_haiphong, "Hai Phong", "The country's capital has many historical monuments"))
-        listProvinceFake.add(Province(5, R.drawable.ic_nghean, "Nghe An", "The country's capital has many historical monuments"))
-        listProvinceFake.add(Province(6, R.drawable.ic_quangbinh, "Quang Binh", "The country's capital has many historical monuments"))
-        listProvinceFake.add(Province(7, R.drawable.ic_hochiminh, "Ho Chi Minh", "The country's capital has many historical monuments"))
 
         listHotTrendFake = mutableListOf()
-        listHotTrendFake.add(HotTrend(0, "", "", ""))
-        listHotTrendFake.add(HotTrend(0, "", "", ""))
-        listHotTrendFake.add(HotTrend(0, "", "", ""))
-        listHotTrendFake.add(HotTrend(0, "", "", ""))
-        listHotTrendFake.add(HotTrend(0, "", "", ""))
+        listHotTrendFake.add(
+            HotTrend(
+                0, R.drawable.ic_yentu, "Yen Tu Pagoda", "Quang Ninh, Viet Nam", "$100", 3,
+                isFavorite = false,
+                isBookMark = false,
+                description = ""
+            )
+        )
+        listHotTrendFake.add(
+            HotTrend(
+                1, R.drawable.ic_hotay, "Ho Tay Lake", "Ha Noi, Viet Nam", "200$", 1,
+                isFavorite = false,
+                isBookMark = false,
+                description = ""
+            )
+        )
+        listHotTrendFake.add(
+            HotTrend(
+                2, R.drawable.ic_hoguom, "Ho Guom Lake", "Ha Noi, Viet Nam", "200$", 1,
+                isFavorite = false,
+                isBookMark = false,
+                description = ""
+            )
+        )
+        listHotTrendFake.add(
+            HotTrend(
+                3, R.drawable.ic_catba, "Cat Ba Beach", "Hai Phong, Viet Nam", "300$", 4,
+                isFavorite = false,
+                isBookMark = false,
+                description = ""
+            )
+        )
+        listHotTrendFake.add(
+            HotTrend(
+                4, R.drawable.ic_chuakeo, "Chua Keo Pagoda", "Thai Binh, Viet Nam", "600$", 2,
+                isFavorite = false,
+                isBookMark = false,
+                description = ""
+            )
+        )
 
     }
 
     private fun initViews() {
-        provinceAdapter = ProvinceAdapter(listProvinceFake) { _, _ ->
+        provinceAdapter = ProvinceAdapter(SingletonClass.getInstance().listProvince) { _, _ ->
 
         }
         val layoutManagerProvince: RecyclerView.LayoutManager =

@@ -23,7 +23,10 @@ class HotTrendAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         with(holder) {
             with(listHotTrend[position]) {
-
+                binding.imvHotTrend.setImageResource(this.imageHotTrend)
+                binding.tvNameHotTrend.text = this.nameHotTrend
+                binding.tvAddressHotTrend.text = this.addressHotTrend
+                binding.tvPriceHotTrend.text = this.priceHotTrend
             }
         }
     }
