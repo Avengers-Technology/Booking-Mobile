@@ -39,11 +39,11 @@
 
     <TextView
         android:id="@+id/tvDescriptionProvince"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/montserrat_light"
         android:maxLines="2"
-        android:text="Mausoleum, The Memorial of Literature"
+        android:text="Mausoleum, The Memorial of "
         android:textColor="#7f949f"
         android:textSize="11sp"
         app:layout_constraintStart_toStartOf="parent"

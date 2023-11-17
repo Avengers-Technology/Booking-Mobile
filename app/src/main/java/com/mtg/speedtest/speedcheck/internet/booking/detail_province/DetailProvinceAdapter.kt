@@ -26,7 +26,7 @@ class DetailProvinceAdapter(
                 binding.imvHotTrend.setImageResource(this.imageHotTrend)
                 binding.tvNameHotTrend.text = this.nameHotTrend
                 binding.tvAddressHotTrend.text = this.addressHotTrend
-                binding.tvPriceHotTrend.text = this.priceHotTrend
+                binding.tvDescriptionHotTrend.text = this.description
             }
         }
     }

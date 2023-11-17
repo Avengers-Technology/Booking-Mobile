@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.mtg.speedtest.speedcheck.internet.booking.SingletonClass
-import com.mtg.speedtest.speedcheck.internet.booking.bookmark_screen.BookmarkAdapter
 import com.mtg.speedtest.speedcheck.internet.booking.databinding.ActDetailProvinceBinding
 import com.mtg.speedtest.speedcheck.internet.booking.model.HotTrend
 import com.mtg.speedtest.speedcheck.internet.booking.model.Province
@@ -36,5 +35,6 @@ class DetailProvinceAct : AppCompatActivity() {
     private fun initViews() {
         province = intent.getSerializableExtra("key_detail_province") as Province
         binding.tvNameProvinceDetail.text = province.addressProvince
+        binding.tvDescriptionDetail.text = getString(province.descriptionProvince)
     }
 }

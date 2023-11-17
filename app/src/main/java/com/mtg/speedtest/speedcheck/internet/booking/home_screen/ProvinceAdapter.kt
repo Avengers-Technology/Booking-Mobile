@@ -1,5 +1,6 @@
 package com.mtg.speedtest.speedcheck.internet.booking.home_screen
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -7,6 +8,7 @@ import com.mtg.speedtest.speedcheck.internet.booking.databinding.ItemProvinceHom
 import com.mtg.speedtest.speedcheck.internet.booking.model.Province
 
 class ProvinceAdapter(
+    private val context: Context,
     private val listProvince: MutableList<Province>,
     val clickListener: (Province, Int) -> Unit
 ) :
@@ -25,7 +27,7 @@ class ProvinceAdapter(
             with(listProvince[position]) {
                 binding.imvProvince.setImageResource(this.imageProvince)
                 binding.tvAddressProvince.text = this.addressProvince
-                binding.tvDescriptionProvince.text = this.descriptionProvince
+                binding.tvDescriptionProvince.text = context.getString(this.descriptionProvince)
                 binding.constraintItemProvince.setOnClickListener {
                     clickListener(listProvince[position], position)
                 }

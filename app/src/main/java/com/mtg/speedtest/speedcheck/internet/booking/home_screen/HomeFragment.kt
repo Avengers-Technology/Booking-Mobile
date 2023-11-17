@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.mtg.speedtest.speedcheck.internet.booking.LanguageHelper
 import com.mtg.speedtest.speedcheck.internet.booking.R
 import com.mtg.speedtest.speedcheck.internet.booking.SingletonClass
 import com.mtg.speedtest.speedcheck.internet.booking.databinding.FragmentHomeBinding
@@ -38,7 +39,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun initViews() {
-        provinceAdapter = ProvinceAdapter(SingletonClass.getInstance().listProvince) { province, _ ->
+        provinceAdapter = ProvinceAdapter(requireContext(), SingletonClass.getInstance().listProvince) { province, _ ->
             val intent = Intent(requireContext(), DetailProvinceAct::class.java)
             intent.putExtra("key_detail_province", province)
             startActivity(intent)
