@@ -8,13 +8,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.mtg.speedtest.speedcheck.internet.booking.LanguageHelper
-import com.mtg.speedtest.speedcheck.internet.booking.R
 import com.mtg.speedtest.speedcheck.internet.booking.SingletonClass
 import com.mtg.speedtest.speedcheck.internet.booking.databinding.FragmentHomeBinding
+import com.mtg.speedtest.speedcheck.internet.booking.detail_hottrend.DetailHotTrend
 import com.mtg.speedtest.speedcheck.internet.booking.detail_province.DetailProvinceAct
-import com.mtg.speedtest.speedcheck.internet.booking.model.HotTrend
-import com.mtg.speedtest.speedcheck.internet.booking.model.Province
+
 
 class HomeFragment : Fragment() {
     companion object {
@@ -50,8 +48,10 @@ class HomeFragment : Fragment() {
         binding.revProvinceHome.adapter = provinceAdapter
 
 
-        hotTrendAdapter = HotTrendAdapter(SingletonClass.getInstance().listHotTrend) { _, _ ->
-
+        hotTrendAdapter = HotTrendAdapter(requireContext(), SingletonClass.getInstance().listHotTrend) { hotTrend, _ ->
+            val intent = Intent(requireContext(), DetailHotTrend::class.java)
+            intent.putExtra("key_detail_hotTrend", hotTrend)
+            startActivity(intent)
         }
         val layoutManagerHotTrend: RecyclerView.LayoutManager = LinearLayoutManager(this.activity, LinearLayoutManager.VERTICAL, false)
         binding.revHotTrend.layoutManager = layoutManagerHotTrend

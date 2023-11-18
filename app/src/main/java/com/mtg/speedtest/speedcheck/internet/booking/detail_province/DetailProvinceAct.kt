@@ -1,11 +1,13 @@
 package com.mtg.speedtest.speedcheck.internet.booking.detail_province
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.mtg.speedtest.speedcheck.internet.booking.SingletonClass
 import com.mtg.speedtest.speedcheck.internet.booking.databinding.ActDetailProvinceBinding
+import com.mtg.speedtest.speedcheck.internet.booking.detail_hottrend.DetailHotTrend
 import com.mtg.speedtest.speedcheck.internet.booking.model.HotTrend
 import com.mtg.speedtest.speedcheck.internet.booking.model.Province
 
@@ -23,8 +25,10 @@ class DetailProvinceAct : AppCompatActivity() {
     }
 
     private fun initEvents() {
-        detailProvinceAdapter = DetailProvinceAdapter(SingletonClass.getInstance().listHotTrend.filter { it.idProvince == province.idProvince } as MutableList<HotTrend>) { _, _ ->
-
+        detailProvinceAdapter = DetailProvinceAdapter(this, SingletonClass.getInstance().listHotTrend.filter { it.idProvince == province.idProvince } as MutableList<HotTrend>) { hotTrend, _ ->
+            val intent = Intent(this, DetailHotTrend::class.java)
+            intent.putExtra("key_detail_hotTrend", hotTrend)
+            startActivity(intent)
         }
         val layoutManagerProvince: RecyclerView.LayoutManager =
             LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)

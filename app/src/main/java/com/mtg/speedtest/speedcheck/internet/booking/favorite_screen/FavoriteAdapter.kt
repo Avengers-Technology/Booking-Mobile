@@ -1,5 +1,6 @@
 package com.mtg.speedtest.speedcheck.internet.booking.favorite_screen
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -7,6 +8,7 @@ import com.mtg.speedtest.speedcheck.internet.booking.databinding.ItemHotTrendHom
 import com.mtg.speedtest.speedcheck.internet.booking.model.HotTrend
 
 class FavoriteAdapter(
+    private val context: Context,
     private val listFavorite: MutableList<HotTrend>,
     val clickListener: (HotTrend, Int) -> Unit
 ) :
@@ -26,7 +28,10 @@ class FavoriteAdapter(
                 binding.imvHotTrend.setImageResource(this.imageHotTrend)
                 binding.tvNameHotTrend.text = this.nameHotTrend
                 binding.tvAddressHotTrend.text = this.addressHotTrend
-                binding.tvDescriptionHotTrend.text = this.description
+                binding.tvDescriptionHotTrend.text = context.getString(this.description)
+                binding.constraintHotTrendDetail.setOnClickListener {
+                    clickListener(listFavorite[position], position)
+                }
             }
         }
     }

@@ -1,5 +1,6 @@
 package com.mtg.speedtest.speedcheck.internet.booking.favorite_screen
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.mtg.speedtest.speedcheck.internet.booking.SingletonClass
 import com.mtg.speedtest.speedcheck.internet.booking.databinding.FragmentFavoriteBinding
+import com.mtg.speedtest.speedcheck.internet.booking.detail_hottrend.DetailHotTrend
 import com.mtg.speedtest.speedcheck.internet.booking.model.HotTrend
 
 class FavoriteFragment : Fragment() {
@@ -33,8 +35,10 @@ class FavoriteFragment : Fragment() {
     }
 
     private fun initViews() {
-        favoriteAdapter = FavoriteAdapter(SingletonClass.getInstance().listHotTrend.filter { it.isFavorite } as MutableList<HotTrend>) { _, _ ->
-
+        favoriteAdapter = FavoriteAdapter(requireContext(), SingletonClass.getInstance().listHotTrend.filter { it.isFavorite } as MutableList<HotTrend>) { hotTrend, _ ->
+            val intent = Intent(requireContext(), DetailHotTrend::class.java)
+            intent.putExtra("key_detail_hotTrend", hotTrend)
+            startActivity(intent)
         }
         val layoutManagerProvince: RecyclerView.LayoutManager =
             LinearLayoutManager(this.activity, LinearLayoutManager.VERTICAL, false)
