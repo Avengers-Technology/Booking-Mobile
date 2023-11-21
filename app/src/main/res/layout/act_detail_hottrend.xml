@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     android:background="@color/black"
     android:orientation="vertical"
-    android:paddingHorizontal="16dp">
+    android:paddingHorizontal="16dp"
+    android:paddingBottom="20dp">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -78,10 +79,22 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <RatingBar
+                android:id="@+id/ratingBarHotTrendDetail"
+                style="@android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:isIndicator="true"
+                android:max="5"
+                android:scaleX=".5"
+                android:scaleY=".5"
+                android:transformPivotX="0dp"
+                android:transformPivotY="0dp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:fontFamily="@font/montserrat_semi_bold"
                 android:text="@string/details"
                 android:textColor="@color/white"
@@ -96,6 +109,13 @@
                 android:text="@string/details"
                 android:textColor="@color/white"
                 android:textSize="14dp" />
+
+            <fragment
+                android:id="@+id/mapHotTrendDetail"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginTop="20dp" />
 
 
         </LinearLayout>
