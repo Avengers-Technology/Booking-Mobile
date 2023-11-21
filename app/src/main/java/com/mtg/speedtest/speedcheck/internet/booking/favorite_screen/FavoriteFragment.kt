@@ -35,7 +35,7 @@ class FavoriteFragment : Fragment() {
     }
 
     private fun initViews() {
-        favoriteAdapter = FavoriteAdapter(requireContext(), SingletonClass.getInstance().listHotTrend.filter { it.isFavorite } as MutableList<HotTrend>) { hotTrend, _ ->
+        favoriteAdapter = FavoriteAdapter(requireContext(), SingletonClass.getInstance().listHotTrend.filter { it.isFavorite }.sortedBy { it.rating }.reversed() as MutableList<HotTrend>) { hotTrend, _ ->
             val intent = Intent(requireContext(), DetailHotTrend::class.java)
             intent.putExtra("key_detail_hotTrend", hotTrend)
             startActivity(intent)

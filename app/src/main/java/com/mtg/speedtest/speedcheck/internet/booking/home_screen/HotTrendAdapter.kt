@@ -29,6 +29,7 @@ class HotTrendAdapter(
                 binding.tvNameHotTrend.text = this.nameHotTrend
                 binding.tvAddressHotTrend.text = this.addressHotTrend
                 binding.tvDescriptionHotTrend.text = context.getString(this.description)
+                binding.ratingBarHotTrend.rating = this.rating
                 binding.constraintHotTrendDetail.setOnClickListener {
                     clickListener(listHotTrend[position], position)
                 }

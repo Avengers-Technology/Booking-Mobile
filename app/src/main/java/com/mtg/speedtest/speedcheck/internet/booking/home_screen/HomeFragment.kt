@@ -12,6 +12,7 @@ import com.mtg.speedtest.speedcheck.internet.booking.SingletonClass
 import com.mtg.speedtest.speedcheck.internet.booking.databinding.FragmentHomeBinding
 import com.mtg.speedtest.speedcheck.internet.booking.detail_hottrend.DetailHotTrend
 import com.mtg.speedtest.speedcheck.internet.booking.detail_province.DetailProvinceAct
+import com.mtg.speedtest.speedcheck.internet.booking.model.HotTrend
 
 
 class HomeFragment : Fragment() {
@@ -37,7 +38,10 @@ class HomeFragment : Fragment() {
     }
 
     private fun initViews() {
-        provinceAdapter = ProvinceAdapter(requireContext(), SingletonClass.getInstance().listProvince) { province, _ ->
+        provinceAdapter = ProvinceAdapter(
+            requireContext(),
+            SingletonClass.getInstance().listProvince
+        ) { province, _ ->
             val intent = Intent(requireContext(), DetailProvinceAct::class.java)
             intent.putExtra("key_detail_province", province)
             startActivity(intent)
@@ -47,13 +51,16 @@ class HomeFragment : Fragment() {
         binding.revProvinceHome.layoutManager = layoutManagerProvince
         binding.revProvinceHome.adapter = provinceAdapter
 
-
-        hotTrendAdapter = HotTrendAdapter(requireContext(), SingletonClass.getInstance().listHotTrend) { hotTrend, _ ->
+        hotTrendAdapter = HotTrendAdapter(requireContext(),
+            SingletonClass.getInstance().listHotTrend.filter { it.rating >= 4 }
+                .sortedBy { it.rating }.reversed() as MutableList<HotTrend>
+        ) { hotTrend, _ ->
             val intent = Intent(requireContext(), DetailHotTrend::class.java)
             intent.putExtra("key_detail_hotTrend", hotTrend)
             startActivity(intent)
         }
-        val layoutManagerHotTrend: RecyclerView.LayoutManager = LinearLayoutManager(this.activity, LinearLayoutManager.VERTICAL, false)
+        val layoutManagerHotTrend: RecyclerView.LayoutManager =
+            LinearLayoutManager(this.activity, LinearLayoutManager.VERTICAL, false)
         binding.revHotTrend.layoutManager = layoutManagerHotTrend
         binding.revHotTrend.adapter = hotTrendAdapter
     }

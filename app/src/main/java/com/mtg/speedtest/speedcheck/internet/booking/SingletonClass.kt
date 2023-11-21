@@ -11,79 +11,106 @@ class SingletonClass private constructor() {
             0, R.drawable.ic_yentu, "Yen Tu Pagoda", "Quang Ninh, Viet Nam", 3,
             isFavorite = false,
             isBookMark = false,
-            description = R.string.description_yentu
+            description = R.string.description_yentu,
+            rating = 3f
         ),
         HotTrend(
             1, R.drawable.ic_vinhhalong, "Ha Long Bay", "Quang Ninh, Viet Nam", 3,
             isFavorite = false,
             isBookMark = false,
-            description = R.string.description_halong
+            description = R.string.description_halong,
+            rating = 4f
         ),
         HotTrend(
             2, R.drawable.ic_baotangq_quangninh, "Quang Ninh Museum", "Quang Ninh, Viet Nam", 3,
             isFavorite = false,
             isBookMark = false,
-            description = R.string.description_baotang_quangninh
+            description = R.string.description_baotang_quangninh,
+            rating = 5f
         ),
         HotTrend(
             3, R.drawable.ic_hotay, "Ho Tay Lake", "Ha Noi, Viet Nam", 1,
             isFavorite = false,
             isBookMark = false,
-            description = R.string.description_hotay
+            description = R.string.description_hotay,
+            rating = 4.5f
         ),
         HotTrend(
             4, R.drawable.ic_hoguom, "Ho Guom Lake", "Ha Noi, Viet Nam", 1,
             isFavorite = false,
             isBookMark = false,
-            description = R.string.description_hoguom
+            description = R.string.description_hoguom,
+            rating = 2f
         ),
         HotTrend(
             5, R.drawable.ic_cauthehuc, "The Huc Bridge", "Ha Noi, Viet Nam", 1,
             isFavorite = false,
             isBookMark = false,
-            description = R.string.description_thehuc
+            description = R.string.description_thehuc,
+            rating = 5f
         ),
         HotTrend(
             6, R.drawable.ic_chuakeo, "Chua Keo Pagoda", "Thai Binh, Viet Nam", 2,
             isFavorite = false,
             isBookMark = false,
-            description = R.string.description_chuakeo
+            description = R.string.description_chuakeo,
+            rating = 3.5f
         ),
         HotTrend(
             7, R.drawable.ic_nhatho_thaibinh, "Thai Binh Church", "Thai Binh, Viet Nam", 2,
             isFavorite = false,
             isBookMark = false,
-            description = R.string.description_nhatho_thaibinh
+            description = R.string.description_nhatho_thaibinh,
+            rating = 4f
         ),
         HotTrend(
             8, R.drawable.ic_tuongdai_bacho, "Bac Ho Monument", "Thai Binh, Viet Nam", 2,
             isFavorite = false,
             isBookMark = false,
-            description = R.string.description_tuongdai_bacho
+            description = R.string.description_tuongdai_bacho,
+            rating = 3.5f
         ),
         HotTrend(
             9, R.drawable.ic_catba, "Cat Ba Beach", "Hai Phong, Viet Nam", 4,
             isFavorite = false,
             isBookMark = false,
-            description = R.string.description_catba
+            description = R.string.description_catba,
+            rating = 3f
         ),
         HotTrend(
             10, R.drawable.ic_dienchau, "Dien Chau City", "Nghe An, Viet Nam", 5,
             isFavorite = false,
             isBookMark = false,
-            description = R.string.description_dienchau
+            description = R.string.description_dienchau,
+            rating = 4.5f
         ),
         HotTrend(
             11, R.drawable.ic_doluong, "Do Luong", "Nghe An, Viet Nam", 5,
             isFavorite = false,
             isBookMark = false,
-            description = R.string.description_doluong
+            description = R.string.description_doluong,
+            rating = 3f
         ),
         HotTrend(
-            12, R.drawable.ic_chobenthanh, "Ben Thanh Maket", "Ho Chi Minh, Viet Nam", 6,
+            13, R.drawable.ic_phongnha_kebang, "Phong Nha Ke Bang", "Quang Binh, Viet Nam", 6,
             isFavorite = false,
             isBookMark = false,
-            description = R.string.description_benthanh
+            description = R.string.description_phongnha_kebang,
+            rating = 4.2f
+        ),
+        HotTrend(
+            12, R.drawable.ic_chobenthanh, "Ben Thanh Maket", "Ho Chi Minh, Viet Nam", 7,
+            isFavorite = false,
+            isBookMark = false,
+            description = R.string.description_benthanh,
+            rating = 3f
+        ),
+        HotTrend(
+            14, R.drawable.ic_dinhdoclap, "Dinh Doc Lap", "Ho Chi Minh, Viet Nam", 7,
+            isFavorite = false,
+            isBookMark = false,
+            description = R.string.description_dinhdoclap,
+            rating = 5f
         ),
     )
 
@@ -93,8 +120,11 @@ class SingletonClass private constructor() {
         Province(3, R.drawable.ic_quangninh, "Quang Ninh", R.string.description_quangninh),
         Province(4, R.drawable.ic_haiphong, "Hai Phong", R.string.description_haiphong),
         Province(5, R.drawable.ic_nghean, "Nghe An", R.string.description_nghean),
-        Province(6, R.drawable.ic_hochiminh, "Ho Chi Minh", R.string.description_hochiminh)
+        Province(6, R.drawable.ic_quangbinh, "Quang Binh", R.string.description_quangbinh),
+        Province(7, R.drawable.ic_hochiminh, "Ho Chi Minh", R.string.description_hochiminh),
     )
+
+
 
     companion object {
         // The single instance of the class

@@ -25,7 +25,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginStart="8dp"
-            android:fontFamily="@font/montserrat_semi_bold_italic"
+            android:fontFamily="@font/montserrat_semi_bold"
             android:text="@string/menu"
             android:textColor="@color/white"
             android:textSize="18sp" />
@@ -153,6 +153,30 @@
             android:fontFamily="@font/montserrat_medium"
             android:text="@string/privacy_policy"
             android:textColor="@color/white" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutCopyright"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingVertical="12dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_copyright" />
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="12dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="@string/this_application_is_written_by_tong_thien_quan_2023"
+            android:textColor="@color/white"
+            android:textSize="11sp"/>
     </LinearLayout>
 
 

@@ -25,7 +25,7 @@ class DetailProvinceAct : AppCompatActivity() {
     }
 
     private fun initEvents() {
-        detailProvinceAdapter = DetailProvinceAdapter(this, SingletonClass.getInstance().listHotTrend.filter { it.idProvince == province.idProvince } as MutableList<HotTrend>) { hotTrend, _ ->
+        detailProvinceAdapter = DetailProvinceAdapter(this, SingletonClass.getInstance().listHotTrend.filter { it.idProvince == province.idProvince }.sortedBy { it.rating }.reversed() as MutableList<HotTrend>) { hotTrend, _ ->
             val intent = Intent(this, DetailHotTrend::class.java)
             intent.putExtra("key_detail_hotTrend", hotTrend)
             startActivity(intent)
