@@ -35,7 +35,7 @@ class BookmarkFragment : Fragment() {
     }
 
     private fun initViews() {
-        bookmarkAdapter = BookmarkAdapter(requireContext(), SingletonClass.getInstance().listHotTrend.filter { it.isBookMark }.sortedBy { it.rating }.reversed() as MutableList<HotTrend>) { hotTrend, _ ->
+        bookmarkAdapter = BookmarkAdapter(requireContext(), SingletonClass.getInstance().listHotTrend.filter { it.isBookMark }.sortedBy { it.rating }.reversed().toMutableList()) { hotTrend, _ ->
             val intent = Intent(requireContext(), DetailHotTrend::class.java)
             intent.putExtra("key_detail_hotTrend", hotTrend)
             startActivity(intent)
